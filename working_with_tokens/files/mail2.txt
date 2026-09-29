@@ -1,0 +1,14 @@
+From: Robert Johnson <robert.johnson@example.com>
+Date: 2026-09-29
+Subject: Payment charged twice for the same order
+
+Hello,
+
+I am contacting you regarding order #67890. I placed the order yesterday and completed the payment successfully.
+
+However, when I checked my bank account this morning, I noticed that the same amount was charged twice. Both transactions have the same date and description, and I did not make a second payment intentionally.
+
+Could you please investigate this issue and refund the duplicate payment? I can provide screenshots from my banking application if necessary.
+
+Best regards,
+Robert Johnson

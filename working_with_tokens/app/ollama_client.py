@@ -32,12 +32,14 @@ class OllamaClient:
                 ],
             )
         except Exception:
-            logger.exception("Error while communicating with Ollama")
+            logger.exception('Error while communicating with Ollama')
             raise
 
         prompt_tokens = response.prompt_eval_count
         completion_tokens = response.eval_count
-        logger.info(f'Successful response: prompt_tokens={prompt_tokens} completion_tokens={completion_tokens}')
+        logger.info(
+            f'Successful response: prompt_tokens={prompt_tokens} completion_tokens={completion_tokens}'
+        )
 
         return response, tokens
 
@@ -50,12 +52,14 @@ class OllamaClient:
         return tokens
 
     def _check_tokens(self, tokens: list[int]) -> bool:
-        if len(tokens)>MAX_INPUT_TOKENS:
-            logger.error(f'MAX_INPUT_TOKENS limit was exceeded: MAX{MAX_INPUT_TOKENS} CURR:{len(tokens)}')
+        if len(tokens) > MAX_INPUT_TOKENS:
+            logger.error(
+                f'MAX_INPUT_TOKENS limit was exceeded: MAX{MAX_INPUT_TOKENS} CURR:{len(tokens)}'
+            )
             return False
         return True
 
     def _truncate_prompt(self, tokens: list[int]) -> str:
-        logger.warning(f"Text was truncated:MAX={MAX_INPUT_TOKENS} CURR={len(tokens)}")
+        logger.warning(f'Text was truncated:MAX={MAX_INPUT_TOKENS} CURR={len(tokens)}')
         truncated_tokens = tokens[:MAX_INPUT_TOKENS]
         return self.encoder.decode(truncated_tokens)

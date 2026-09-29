@@ -1,6 +1,7 @@
 import os
 from loguru import logger
 
+
 class FileProcesser:
     def __init__(self) -> None:
         pass

@@ -1,4 +1,4 @@
-from app.exceptions import NoFileProcesser
+from app.exceptions import NoFileProcesserException
 from app.file_processer import FileProcesser
 from app.ollama_client import OllamaClient
 
@@ -16,7 +16,7 @@ class Application:
 
     def process_dir(self, path_to_dir: str):
         if not self.file_processer:
-            raise NoFileProcesser()
+            raise NoFileProcesserException()
 
         for text in self.file_processer.process_dir(path_to_dir):
             yield self.process_text(text)

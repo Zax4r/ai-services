@@ -1,2 +1,2 @@
-class NoFileProcesser(Exception):
+class NoFileProcesserException(Exception):
     pass
